@@ -118,4 +118,108 @@ class AcademicProgramTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test5() {
+        AcademicProgram program = new AcademicProgram();
+
+        List<String> result = new ArrayList<>();
+        try (Scanner s = new Scanner(new FileReader("C:\\AcademicProgram\\courses1.txt"))) {
+            while (s.hasNext()) {
+                result.add(s.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String output = program.getSchedule2(result);
+
+        assertNotNull(output);
+        assertEquals("0 1 2 3", output);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\AcademicProgram\\schedule1.txt"));) {
+            writer.write(output);
+            //System.out.println(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test6() {
+        AcademicProgram program = new AcademicProgram();
+
+        List<String> result = new ArrayList<>();
+        try (Scanner s = new Scanner(new FileReader("C:\\AcademicProgram\\courses2.txt"))) {
+            while (s.hasNext()) {
+                result.add(s.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String output = program.getSchedule2(result);
+
+        assertNotNull(output);
+        assertEquals("0 1 2 3 4 5 6", output);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\AcademicProgram\\schedule2.txt"));) {
+            writer.write(output);
+            //System.out.println(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test7() {
+        AcademicProgram program = new AcademicProgram();
+
+        List<String> result = new ArrayList<>();
+        try (Scanner s = new Scanner(new FileReader("C:\\AcademicProgram\\courses3.txt"))) {
+            while (s.hasNext()) {
+                result.add(s.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String output = program.getSchedule2(result);
+
+        assertNotNull(output);
+        assertEquals("0 1 2 3 4 5 6", output);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\AcademicProgram\\schedule3.txt"));) {
+            writer.write(output);
+            //System.out.println(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test8() {
+        AcademicProgram program = new AcademicProgram();
+
+        List<String> result = new ArrayList<>();
+        try (Scanner s = new Scanner(new FileReader("C:\\AcademicProgram\\courses4.txt"))) {
+            while (s.hasNext()) {
+                result.add(s.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String output = program.getSchedule2(result);
+
+        assertNotNull(output);
+        assertEquals("1 2 0 3", output);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\AcademicProgram\\schedule4.txt"));) {
+            writer.write(output);
+            //System.out.println(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
